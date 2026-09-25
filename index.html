@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>mybebi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>For My Bebi 🤍</title>
+
+  <!-- Soft handwritten + clean rounded fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <!-- =========================================================
+       BACKGROUND EFFECTS
+  ========================================================== -->
+  <div class="background-scene" aria-hidden="true">
+    <div class="aurora aurora-one"></div>
+    <div class="aurora aurora-two"></div>
+    <div class="glow-orb glow-orb-one"></div>
+    <div class="glow-orb glow-orb-two"></div>
+    <div class="light-ray ray-one"></div>
+    <div class="light-ray ray-two"></div>
+    <div id="particleField"></div>
+    <div id="floatingHeartField"></div>
+  </div>
+
+  <!-- =========================================================
+       NAVIGATION
+  ========================================================== -->
+  <nav class="floating-nav" id="floatingNav" aria-label="Main navigation">
+    <button class="nav-brand" type="button" data-scroll-target="home">
+      ♡ <span>Bebi</span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <button class="nav-link active" type="button" data-scroll-target="home">
+        Home
+      </button>
+      <button class="nav-link" type="button" data-scroll-target="message">
+        Message
+      </button>
+      <button class="nav-link" type="button" data-scroll-target="memories">
+        Memories
+      </button>
+      <button class="nav-link" type="button" data-scroll-target="breathe">
+        Breathe
+      </button>
+    </div>
+
+    <button
+      class="nav-menu-toggle"
+      id="navMenuToggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+  </nav>
+
+  <main>
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+    <section class="hero section" id="home">
+      <div class="hero-content reveal">
+        <p class="eyebrow">a little GIFT made just for you BABI</p>
+
+        <h1>
+          TO MY, Bebi
+          <span class="title-heart">🤍</span>
+        </h1>
+
+        <p class="hero-message">
+          I know things can feel heavy sometimes,<br />
+          but you don't have to carry everything alone.
+        </p>
+
+        <div class="hero-heart-wrap" aria-hidden="true">
+          <div class="hero-heart">♥</div>
+          <span></span>
+        </div>
+
+        <button class="primary-button hero-button" id="heroButton" type="button">
+          Come here, Bebi ♡
+        </button>
+
+        <div class="hero-note">
+          <span>soft reminder</span>
+          <i></i>
+          <span>you are cared for</span>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>scroll gently</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         COMFORT MESSAGE
+    ========================================================== -->
+    <section class="comfort-section section" id="message">
+      <div class="section-heading reveal">
+        <p class="eyebrow">a few things i hope you remember</p>
+        <h2>For You, Bebi <span>🤍</span></h2>
+        <p>
+          You don't have to solve everything tonight. Sometimes being gentle
+          with yourself is enough.
+        </p>
+      </div>
+
+      <div class="comfort-grid">
+        <article class="comfort-card reveal-card">
+          <div class="card-icon">♡</div>
+          <p>You don't always have to be strong.</p>
+        </article>
+
+        <article class="comfort-card reveal-card">
+          <div class="card-icon">♡</div>
+          <p>It's okay to rest when you're tired.</p>
+        </article>
+
+        <article class="comfort-card reveal-card">
+          <div class="card-icon">♡</div>
+          <p>You don't have to figure everything out tonight.</p>
+        </article>
+
+        <article class="comfort-card reveal-card">
+          <div class="card-icon">♡</div>
+          <p>I'm proud of you for making it this far.</p>
+        </article>
+
+        <article class="comfort-card reveal-card">
+          <div class="card-icon">♡</div>
+          <p>Whatever you're feeling right now, it's okay to feel it.</p>
+        </article>
+
+        <article class="comfort-card reveal-card">
+          <div class="card-icon">♡</div>
+          <p>Take your time. Breathe. You're doing your best.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ENVELOPE
+    ========================================================== -->
+    <section class="envelope-section section" id="letterSection">
+      <div class="section-heading reveal">
+        <p class="eyebrow">something little, from me to you</p>
+        <h2>There's something I want you to read…</h2>
+      </div>
+
+      <div class="envelope-area">
+        <div class="envelope-glow" aria-hidden="true"></div>
+
+        <div class="envelope" id="envelope">
+          <div class="envelope-back"></div>
+
+          <!-- Letter peek -->
+          <div class="letter-peek" id="letterPeek" aria-hidden="true">
+            <div class="letter-peek-content">
+              <span>for my bebi 🤍</span>
+            </div>
+          </div>
+
+          <div class="envelope-front"></div>
+
+          <div class="envelope-flap" id="envelopeFlap">
+            <div class="flap-inner"></div>
+          </div>
+
+          <div class="wax-seal" id="waxSeal" aria-hidden="true">
+            <span>♥</span>
+          </div>
+
+          <div class="envelope-shine"></div>
+        </div>
+
+        <p class="envelope-caption">
+          Tap the envelope when you're ready 💌
+        </p>
+
+        <button class="primary-button" id="envelopeTrigger" type="button">
+          Open my message 💌
+        </button>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         MEMORIES / GALLERY
+    ========================================================== -->
+    <section class="memories-section section" id="memories">
+      <div class="section-heading reveal">
+        <h2>GALLERY NG ASAWA KO YAN <span>📸</span></h2>
+        <p>
+          Replace these pictures with your own favorite moments whenever
+          you're ready.
+        </p>
+      </div>
+
+      <div class="memory-gallery" id="memoryGallery">
+        <!-- Visible 6 -->
+        <figure
+          class="memory-card reveal-photo"
+          data-index="0"
+          data-caption="one of my favorite moments 🤍"
+        >
+          <img
+            src="https://cdn.corenexis.com/f/jPWIEzzWlzw.jpg"
+            alt="MY WIFEYY"
+            loading="lazy"
+          />
+          <figcaption>one of my favorite Person</figcaption>
+        </figure>
+
+        <figure
+          class="memory-card reveal-photo"
+          data-index="1"
+          data-caption="MY BEBI"
+        >
+          <img
+            src="https://cdn.corenexis.com/f/hpMBMo0pFlj.jpg"
+            alt="Romantic outdoor moment"
+            loading="lazy"
+          />
+          <figcaption>my Favorate Person Na matampohin</figcaption>
+        </figure>
+
+        <figure
+          class="memory-card reveal-photo"
+          data-index="2"
+        
+        >
+          <img
+            src="https://cdn.corenexis.com/f/2bG5HIHuepV.jpg"
+          
+            loading="lazy"
+          />
+          <figcaption>my Favorate Person Na matampohin</figcaption>
+        </figure>
+
+        <figure
+          class="memory-card reveal-photo"
+          data-index="3"
+         
+        >
+          <img
+            src="https://cdn.corenexis.com/f/faHuK5YJOkv.jpg"
+           
+            loading="lazy"
+          />
+          <figcaption>my Favorate Person Na matampohin</figcaption>
+        </figure>
+
+        <figure
+          class="memory-card reveal-photo"
+          data-index="4"
+          data-caption="another reason to smile"
+        >
+          <img
+            src="https://cdn.corenexis.com/f/txaCIdEoMyL.jpg"
+
+            loading="lazy"
+          />
+          <figcaption>another reason to smile</figcaption>
+        </figure>
+
+        <figure
+          class="memory-card reveal-photo"
+          data-index="5"
+          data-caption="keeping this one close to my heart"
+        >
+          <img
+            src="https://cdn.corenexis.com/f/1OJuX3jiqRa.jpg"
+            alt="Friends celebrating together"
+            loading="lazy"
+          />
+          <figcaption>keeping this one close to my heart</figcaption>
+        </figure>
+
+        <!-- Extra 6 -->
+        <figure
+          class="memory-card extra-memory reveal-photo"
+          data-index="6"
+          data-caption="KYUTTT"
+        >
+          <img
+            src="https://cdn.corenexis.com/f/eN16OLjhwsE.jpg"
+            loading="lazy"
+          />
+          <figcaption>SARAP MO KURUTIN BEBI</figcaption>
+        </figure>
+
+        <figure
+          class="memory-card extra-memory reveal-photo"
+          data-index="7"
+          data-caption="BEBI KO PALA "
+        >
+          <img
+            src="https://cdn.corenexis.com/f/gbBzGSANfXE.jpg"
+           
+            loading="lazy"
+          />
+          <figcaption>ASAWA KOYAN</figcaption>
+        </figure>
+
+       
+      </div>
+
+      <button class="secondary-button" id="showMoreButton" type="button">
+        Show More Memories
+      </button>
+    </section>
+
+    <!-- =========================================================
+         BREATHING
+    ========================================================== -->
+    <section class="breathing-section section" id="breathe">
+      <div class="section-heading reveal">
+        <p class="eyebrow">just for a little while</p>
+        <h2>Take a little breath with me 🤍</h2>
+        <p>
+          Nothing to solve. Just breathe slowly and let your shoulders relax.
+        </p>
+      </div>
+
+      <div class="breathing-card reveal">
+        <div class="breathing-orbit orbit-one"></div>
+        <div class="breathing-orbit orbit-two"></div>
+
+        <div class="breath-circle" id="breathCircle">
+          <div class="breath-circle-inner">
+            <span class="breath-phase" id="breathPhase">Ready?</span>
+            <small>slow and easy</small>
+          </div>
+        </div>
+
+        <div class="breath-progress">
+          <div class="breath-progress-bar" id="breathProgressBar"></div>
+        </div>
+
+        <div class="breathing-controls">
+          <button class="primary-button small-button" id="breathStart" type="button">
+            Start
+          </button>
+          <button class="secondary-button small-button" id="breathPause" type="button">
+            Pause
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         HUG
+    ========================================================== -->
+    <section class="hug-section section">
+      <div class="hug-card reveal" id="hugCard">
+        <div class="hug-burst" id="hugBurst" aria-hidden="true"></div>
+
+        <div class="hug-heart" id="hugHeart" aria-hidden="true">
+          🤍
+        </div>
+
+        <p class="eyebrow">one more thing</p>
+        <h2>Need a little hug?</h2>
+        <p id="hugMessage">
+          Press the button. I made you one.
+        </p>
+
+        <button class="primary-button" id="hugButton" type="button">
+          Give Bebi a Hug 🤍
+        </button>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FINAL
+    ========================================================== -->
+    <section class="final-section section" id="finalSection">
+      <div class="final-content reveal">
+        <div class="final-stars" aria-hidden="true">✦ · ˚ ✧ · ˚ ✦</div>
+
+        <p class="eyebrow">before you go…</p>
+
+        <h2>Before You Go… <span>🤍</span></h2>
+
+        <p class="final-message">
+          Whatever happens today, please remember:
+        </p>
+
+        <div class="final-list">
+          <span>You are important.</span>
+          <span>You are appreciated.</span>
+          <span>You are allowed to rest.</span>
+          <span>And you don't have to have everything figured out.</span>
+        </div>
+
+        <p class="final-message final-goodbye">
+          Take care of yourself, Bebi. 🤍
+        </p>
+
+        <div class="final-glowing-heart" aria-hidden="true">♥</div>
+
+        <p class="made-with-care">Made with care, just for you.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       LETTER MODAL
+  ========================================================== -->
+  <div
+    class="letter-modal"
+    id="letterModal"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="letterModalTitle"
+  >
+    <div class="letter-backdrop" id="letterBackdrop"></div>
+
+    <div class="modal-hearts" id="modalHearts" aria-hidden="true"></div>
+
+    <div class="modal-letter-wrap" id="modalLetterWrap">
+      <article class="modal-letter">
+        <div class="paper-decoration deco-one">♡</div>
+        <div class="paper-decoration deco-two">✦</div>
+
+        <div class="letter-top">
+          <span class="tiny-label">for my favorite person</span>
+          <h2 id="letterModalTitle">Hi, Bebi. 🤍</h2>
+        </div>
+
+        <div class="typed-message" id="typedMessage"></div>
+        <div class="typing-cursor" id="typingCursor" aria-hidden="true"></div>
+
+        <div class="letter-bottom">
+          <span>always gently,</span>
+          <strong>🤍</strong>
+        </div>
+      </article>
+
+      <button class="letter-close-button" id="letterCloseButton" type="button">
+        Close Letter
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       HIDDEN EDITABLE LETTER SOURCE
+       Edit this text directly in HTML.
+  ========================================================== -->
+  <pre id="letterCopy" hidden>
+Hi, Bebi. 🤍
+
+I just want you to remember that you don't have to pretend that everything is okay all the time.
+
+If you're tired, rest.
+If you're overwhelmed, breathe.
+If you need some time, take it.
+
+You are doing better than you think.
+
+I may not always know exactly what to say, but I hope this little page reminds you that someone cares about you and wants you to be okay.
+
+So please take care of yourself, okay?
+
+One step at a time, Bebi. 🤍</pre>
+
+  <!-- =========================================================
+       AUDIO
+       Replace "your-music-file.mp3" with your own file URL.
+       It never autoplayes.
+  ========================================================== -->
+  <audio id="bgMusic" loop preload="none">
+    <source src="https://cdn.imageurlgenerator.com/uploads/bcd97b04-2acb-484b-8f3f-dfe0574f40ca.mp3" type="audio/mpeg" />
+  </audio>
+
+  <button
+    class="music-button"
+    id="musicButton"
+    type="button"
+    aria-label="Toggle music"
+  >
+    ♪ Music
+  </button>
+
+  <div class="music-status" id="musicStatus" aria-live="polite"></div>
+
+  <!-- Screen pulse -->
+  <div class="screen-pulse" id="screenPulse" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+    <script src="/script.js"></script>
+  </body>
+
+</html>
