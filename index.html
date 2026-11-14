@@ -1,386 +1,124 @@
+
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>For My Mommy ♡ — Our Special Day</title>
-  <meta name="description" content="A little digital gift for my mommy — October 25, 2026.">
-  <meta name="theme-color" content="#2a1747">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 30'%3E%3Cpath fill='%23d6455f' d='M16 28C16 28 2 19 2 9.5 2 5 5.5 2 9.5 2c2.6 0 4.9 1.4 6.5 3.6C17.6 3.4 19.9 2 22.5 2 26.5 2 30 5 30 9.5 30 19 16 28 16 28Z'/%3E%3C/svg%3E">
-
-  <!-- Fonts (if you are offline the site falls back to nice system fonts) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Nunito:wght@400;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-  <noscript><style>.intro{display:none}</style></noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Wars: Reborn</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="is-locked">
-  <a class="skip-link" href="#hero">Skip to content</a>
-  <noscript><p class="noscript">Please turn on JavaScript to open this surprise ♡</p></noscript>
+<body>
 
-  <!-- ============ OPENING SCREEN ============ -->
-  <section class="intro" id="intro" aria-labelledby="introTitle">
-    <div class="intro__sky" id="introSky" aria-hidden="true"></div>
-    <div class="intro__content">
-      <div class="intro__heart" aria-hidden="true">
-        <svg viewBox="0 0 32 30" width="100%" height="100%" focusable="false">
-          <defs>
-            <linearGradient id="heartGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#ffb3c6"/><stop offset="1" stop-color="#e0486f"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#heartGrad)" d="M16 28C16 28 2 19 2 9.5 2 5 5.5 2 9.5 2c2.6 0 4.9 1.4 6.5 3.6C17.6 3.4 19.9 2 22.5 2 26.5 2 30 5 30 9.5 30 19 16 28 16 28Z"/>
-        </svg>
-      </div>
-      <p class="intro__text" id="introTitle">I made something special just for you, Mommy ♡</p>
-      <button class="btn btn--primary btn--large" id="openBtn" type="button">Open Your Surprise</button>
-      <button class="intro__music" id="introMusic" type="button" aria-pressed="false">♪ Music: off</button>
-      <p class="intro__note">Sound only plays if you choose it.</p>
+<header class="topbar">
+    <div class="logo">⚔ SOCIAL WARS: REBORN</div>
+
+    <div class="resources">
+        <span>🪙 <b id="gold">1000</b></span>
+        <span>🌾 <b id="food">500</b></span>
+        <span>🛢️ <b id="oil">250</b></span>
     </div>
-  </section>
 
-  <!-- Effects layer (hearts, sparkles) — decorative only -->
-  <div class="fx-layer" id="fx" aria-hidden="true"></div>
+    <div class="level">LEVEL <b id="level">1</b></div>
+</header>
 
-  <!-- Welcome message shown right after opening -->
-  <div class="welcome" id="welcome" role="status" hidden>
-    <p class="welcome__title">Welcome, <span data-bind="mommyName">Mommy</span> ♡</p>
-    <p id="welcomeText"></p>
-    <button class="btn btn--ghost btn--small" id="welcomeClose" type="button">Thank you ♡</button>
-  </div>
+<main class="game-layout">
 
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <aside class="sidebar">
+        <h2>COMMAND</h2>
 
-  <!-- ============ HEADER / NAV ============ -->
-  <header class="site-header" id="siteHeader" inert>
-    <nav class="nav" aria-label="Main navigation">
-      <a class="nav__logo" href="#hero">♡ <span>For Mommy</span></a>
-      <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__menu" id="navMenu">
-        <li><a href="#countdown">Countdown</a></li>
-        <li><a href="#story">Story</a></li>
-        <li><a href="#letter">Letter</a></li>
-        <li><a href="#garden">Garden</a></li>
-        <li><a href="#gallery">Photos</a></li>
-        <li><a href="#reasons">Reasons</a></li>
-        <li><a href="#messages">Messages</a></li>
-        <li><a href="#heart">Love</a></li>
-        <li><a href="#dreams">Dreams</a></li>
-        <li><a href="#surprise">Surprise</a></li>
-      </ul>
-    </nav>
-  </header>
+        <button id="btnBase">🏠 My Base</button>
+        <button id="btnArmy">🪖 Army</button>
+        <button id="btnMissions">📜 Missions</button>
+        <button id="btnShop">🛒 Building Shop</button>
+        <button id="btnSave">💾 Save Game</button>
+    </aside>
 
-  <main id="main" inert>
+    <section class="main-area">
 
-    <!-- ============ HERO ============ -->
-    <section class="hero" id="hero" data-inview aria-labelledby="heroTitle">
-      <span class="hero__orb hero__orb--1" aria-hidden="true"></span>
-      <span class="hero__orb hero__orb--2" aria-hidden="true"></span>
-      <span class="hero__float hero__float--1" aria-hidden="true">♡</span>
-      <span class="hero__float hero__float--2" aria-hidden="true">✦</span>
-      <span class="hero__float hero__float--3" aria-hidden="true">♡</span>
-      <div class="hero__inner">
-        <p class="eyebrow hero__item">A little digital gift</p>
-        <h1 class="hero__title hero__item" id="heroTitle" tabindex="-1">For My <span>Mommy</span> ♡<br>— Our Special Day</h1>
-        <p class="hero__date hero__item"><time datetime="2026-10-25">October 25, 2026</time></p>
-        <p class="hero__lead hero__item">Even from far away, I wanted you to have a place made only for you — with flowers, words, and a little bit of my heart.</p>
-        <div class="hero__actions hero__item">
-          <a class="btn btn--primary" href="#countdown">See the countdown</a>
-          <a class="btn btn--ghost" href="#surprise">Our special surprise</a>
-        </div>
-      </div>
-      <a class="hero__scroll" href="#countdown" aria-label="Scroll down">↓</a>
-    </section>
-
-    <!-- ============ COUNTDOWN ============ -->
-    <section class="section" id="countdown" aria-labelledby="cdTitle">
-      <div class="container container--narrow">
-        <header class="section__head reveal">
-          <p class="eyebrow">Counting the moments</p>
-          <h2 class="section__title" id="cdTitle">Until Our Monthsary</h2>
-          <p class="section__lead">The countdown runs on your own device’s clock, all the way to October 25, 2026.</p>
-        </header>
-
-        <div class="cd-card glow-border reveal" data-inview>
-          <div class="cd-grid" id="cdGrid" role="timer" aria-label="Time until October 25, 2026">
-            <div class="cd-box"><span class="cd-num" id="cdDays">--</span><span class="cd-label">Days</span></div>
-            <div class="cd-box"><span class="cd-num" id="cdHours">--</span><span class="cd-label">Hours</span></div>
-            <div class="cd-box"><span class="cd-num" id="cdMinutes">--</span><span class="cd-label">Minutes</span></div>
-            <div class="cd-box"><span class="cd-num" id="cdSeconds">--</span><span class="cd-label">Seconds</span></div>
-          </div>
-          <div class="cd-celebrate" id="cdCelebrate" hidden>
-            <p class="cd-celebrate__title">HAPPY MONTHSARY, MY MOMMY! ♡</p>
-            <p id="cdCelebrateText"></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider reveal" aria-hidden="true"><span>✿</span><span>♡</span><span>✿</span></div>
-
-    <!-- ============ TIMELINE ============ -->
-    <section class="section" id="story" aria-labelledby="storyTitle">
-      <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow">Chapter by chapter</p>
-          <h2 class="section__title" id="storyTitle">Our Little Story</h2>
-          <p class="section__lead">Each card is a placeholder for you to fill with real memories. Edit them in <code>script.js</code> under <code>timeline</code>.</p>
-        </header>
-        <div class="timeline" id="timelineList"></div>
-      </div>
-    </section>
-
-    <div class="divider reveal" aria-hidden="true"><span>✿</span><span>♡</span><span>✿</span></div>
-
-    <!-- ============ LOVE LETTER ============ -->
-    <section class="section" id="letter" aria-labelledby="letterTitle">
-      <div class="container container--narrow">
-        <header class="section__head reveal">
-          <p class="eyebrow">Written with care</p>
-          <h2 class="section__title" id="letterTitle">A Letter For You</h2>
-          <p class="section__lead">Tap the envelope to open it.</p>
-        </header>
-
-        <div class="envelope-stage reveal" id="letterStage" data-inview>
-          <button class="envelope" id="envelopeBtn" type="button" aria-expanded="false" aria-controls="letterSheet" aria-label="Open the love letter">
-            <span class="envelope__body"></span>
-            <span class="envelope__flap"></span>
-            <span class="envelope__paper"><i></i><i></i><i></i><i></i></span>
-            <span class="envelope__front"></span>
-            <span class="envelope__seal" aria-hidden="true">♥</span>
-          </button>
-
-          <div class="letter-controls">
-            <button class="btn btn--primary btn--small" id="letterOpen" type="button">Open the envelope</button>
-            <button class="btn btn--ghost btn--small" id="letterReveal" type="button" disabled>Show the full letter</button>
-            <button class="btn btn--ghost btn--small" id="letterClose" type="button" disabled>Close the envelope</button>
-          </div>
-
-          <div class="letter-sheet" id="letterSheet" aria-hidden="true">
-            <div class="letter-sheet__inner">
-              <article class="letter-paper" id="letterPaper" aria-label="Love letter"></article>
+        <div class="welcome">
+            <div>
+                <h1>COMMAND CENTER</h1>
+                <p>Build your empire. Train your army. Become a legend.</p>
             </div>
-          </div>
+
+            <span class="online">● BASE ONLINE</span>
         </div>
-      </div>
+
+        <section class="game-panel">
+            <div class="base-header">
+                <div>
+                    <h2>Military Base</h2>
+                    <p id="baseInfo">Your base is ready.</p>
+                </div>
+
+                <button id="btnCollect">Collect Resources</button>
+            </div>
+
+            <div class="base-grid" id="baseGrid"></div>
+
+            <div class="map-legend">
+                <span>🟩 Empty tile</span>
+                <span>🏢 Occupied tile</span>
+                <span>🟨 Selected building</span>
+            </div>
+        </section>
+
+        <section class="game-panel">
+            <h2>Building Shop</h2>
+            <p class="muted">Choose a structure, then click an empty tile.</p>
+
+            <div class="build-options">
+
+                <button class="shop-button" data-build="Barracks">
+                    🪖 Barracks
+                    <small>200 Gold</small>
+                </button>
+
+                <button class="shop-button" data-build="Gold Mine">
+                    🪙 Gold Mine
+                    <small>300 Gold</small>
+                </button>
+
+                <button class="shop-button" data-build="Farm">
+                    🌾 Farm
+                    <small>150 Gold</small>
+                </button>
+
+                <button class="shop-button" data-build="Defense Tower">
+                    🛡️ Defense Tower
+                    <small>250 Gold</small>
+                </button>
+
+            </div>
+
+            <button id="btnCancel" class="cancel-button">
+                Cancel Action
+            </button>
+        </section>
+
+        <section class="game-panel building-details">
+            <h2>Building Information</h2>
+
+            <div id="buildingInfo">
+                <p class="muted">Select a building on your map to see its information.</p>
+            </div>
+
+            <div class="building-actions">
+                <button id="btnUpgrade" disabled>⬆ Upgrade</button>
+                <button id="btnMove" disabled>↔ Move Building</button>
+                <button id="btnCancelMove" hidden>Cancel Move</button>
+            </div>
+        </section>
+
+        <section class="game-panel">
+            <h2>Game Notifications</h2>
+            <p id="message">Welcome, Commander!</p>
+        </section>
+
     </section>
+</main>
 
-    <div class="divider reveal" aria-hidden="true"><span>✿</span><span>♡</span><span>✿</span></div>
+<script src="js/main.js"></script>
 
-    <!-- ============ FLOWER GARDEN ============ -->
-    <section class="section" id="garden" aria-labelledby="gardenTitle">
-      <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow">Grown for you</p>
-          <h2 class="section__title" id="gardenTitle">A Garden for My Mommy</h2>
-          <p class="section__lead">Tap any flower to make it bloom — or let me bloom them all.</p>
-        </header>
-
-        <div class="garden reveal" id="gardenField" data-inview>
-          <div class="garden__petals" id="gardenPetals" aria-hidden="true"></div>
-        </div>
-        <p class="garden__message" id="gardenMessage" aria-live="polite">Even from far away, I hope these flowers remind you how special you are to me. ♡</p>
-        <div class="garden__actions">
-          <button class="btn btn--primary" id="bloomBtn" type="button">Bloom for My Mommy</button>
-          <button class="btn btn--ghost" id="gardenReset" type="button">Reset the garden</button>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider reveal" aria-hidden="true"><span>✿</span><span>♡</span><span>✿</span></div>
-
-    <!-- ============ GALLERY ============ -->
-    <section class="section" id="gallery" aria-labelledby="galleryTitle">
-      <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow">Our pictures</p>
-          <h2 class="section__title" id="galleryTitle">Little Moments, Big Feelings</h2>
-          <p class="section__lead">Put your photos in <code>assets/images/</code> and match the file names in <code>script.js</code>. Until then, pretty placeholders hold the spot.</p>
-        </header>
-        <div class="gallery" id="galleryGrid"></div>
-      </div>
-    </section>
-
-    <!-- ============ REASONS ============ -->
-    <section class="section section--tint" id="reasons" aria-labelledby="reasonsTitle">
-      <div class="container container--narrow">
-        <header class="section__head reveal">
-          <p class="eyebrow">One card at a time</p>
-          <h2 class="section__title" id="reasonsTitle">Reasons I Love You</h2>
-          <p class="section__lead">Each tap reveals a new reason. No repeats until the whole deck is done.</p>
-        </header>
-
-        <div class="deck reveal">
-          <button class="rcard" id="reasonCard" type="button" aria-label="Reveal a reason">
-            <span class="rcard__inner">
-              <span class="rcard__face rcard__face--front">
-                <span class="rcard__heart" aria-hidden="true">♡</span>
-                <span class="rcard__hint">Tap for a reason</span>
-              </span>
-              <span class="rcard__face rcard__face--back">
-                <span class="rcard__num" id="reasonNum">Reason</span>
-                <span class="rcard__text" id="reasonBack"></span>
-              </span>
-            </span>
-          </button>
-        </div>
-
-        <div class="deck-progress reveal">
-          <div class="deck-progress__bar" role="progressbar" aria-label="Reasons revealed" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0" id="reasonProgress">
-            <span id="reasonProgressBar"></span>
-          </div>
-          <p class="deck-progress__text" id="reasonCount">0 of 0 reasons shown</p>
-          <div class="deck-dots" id="reasonDots" aria-hidden="true"></div>
-        </div>
-        <div class="center reveal">
-          <button class="btn btn--primary" id="reasonBtn" type="button">Give Me a Reason</button>
-        </div>
-        <p class="sr-only" id="reasonLive" aria-live="polite"></p>
-      </div>
-    </section>
-
-    <!-- ============ MESSAGE GENERATOR ============ -->
-    <section class="section" id="messages" aria-labelledby="msgTitle">
-      <div class="container container--narrow">
-        <header class="section__head reveal">
-          <p class="eyebrow">Pick a feeling</p>
-          <h2 class="section__title" id="msgTitle">A Little Message Just for You</h2>
-        </header>
-
-        <div class="glass-card msg reveal">
-          <div class="chips" id="msgChips" role="radiogroup" aria-label="Message category"></div>
-          <button class="btn btn--primary" id="msgBtn" type="button">Show me a message</button>
-          <blockquote class="msg__out" id="msgOutput" aria-live="polite">Choose a feeling, then tap the button ♡</blockquote>
-          <div class="msg__actions">
-            <button class="btn btn--ghost btn--small" id="msgCopy" type="button" disabled>Copy message</button>
-            <span class="msg__status" id="msgCopyStatus" role="status"></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ HEART BUTTON ============ -->
-    <section class="section section--tint" id="heart" aria-labelledby="heartTitle">
-      <div class="container container--narrow center">
-        <header class="section__head reveal">
-          <p class="eyebrow">Just for fun</p>
-          <h2 class="section__title" id="heartTitle">Send Me a Little Love</h2>
-          <p class="section__lead">This counter only lives on this page — it doesn’t send a real message or notification.</p>
-        </header>
-
-        <div class="reveal">
-          <button class="heart-btn" id="heartBtn" type="button" aria-label="Send me a little love">
-            <svg viewBox="0 0 32 30" aria-hidden="true" focusable="false"><path d="M16 28C16 28 2 19 2 9.5 2 5 5.5 2 9.5 2c2.6 0 4.9 1.4 6.5 3.6C17.6 3.4 19.9 2 22.5 2 26.5 2 30 5 30 9.5 30 19 16 28 16 28Z"/></svg>
-          </button>
-          <p class="heart-count"><span id="heartCount">0</span> little hearts</p>
-          <p class="heart-response" id="heartResponse" aria-live="polite">Tap the heart ♡</p>
-          <button class="btn btn--ghost btn--small" id="heartReset" type="button">Reset</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ FUTURE DREAMS ============ -->
-    <section class="section" id="dreams" aria-labelledby="dreamsTitle">
-      <div class="container">
-        <header class="section__head reveal">
-          <p class="eyebrow">Looking ahead, gently</p>
-          <h2 class="section__title" id="dreamsTitle">Little Dreams, One Day at a Time</h2>
-          <p class="section__lead">Tap a card to read what’s inside.</p>
-        </header>
-        <div class="dreams" id="dreamGrid"></div>
-      </div>
-    </section>
-
-    <!-- ============ SURPRISE SEQUENCE ============ -->
-    <section class="section section--tint" id="surprise" aria-labelledby="surpriseTitle">
-      <div class="container container--narrow center">
-        <header class="section__head reveal">
-          <p class="eyebrow">One more thing</p>
-          <h2 class="section__title" id="surpriseTitle">Our Special Surprise</h2>
-          <p class="section__lead">It only starts when you choose. You can skip or close it anytime, and the rest of the page stays yours to explore.</p>
-        </header>
-        <div class="reveal">
-          <button class="btn btn--primary btn--large" id="startSeqBtn" type="button">Start Our Special Surprise</button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ============ SURPRISE OVERLAY (does not block the page) ============ -->
-  <div class="sequence" id="sequence" hidden>
-    <div class="sequence__dim"></div>
-    <div class="sequence__card" id="seqCard" role="region" aria-label="Special surprise">
-      <button class="sequence__x" id="seqClose" type="button" aria-label="Close the surprise">×</button>
-      <p class="sequence__title" id="seqTitle"></p>
-      <p class="sequence__text" id="seqText" aria-live="polite"></p>
-      <div class="sequence__actions" id="seqActions" hidden>
-        <button class="btn btn--primary btn--small" id="seqLetter" type="button">Read the letter</button>
-        <button class="btn btn--ghost btn--small" id="seqGallery" type="button">See the gallery</button>
-        <button class="btn btn--ghost btn--small" id="seqReasons" type="button">Reasons cards</button>
-      </div>
-      <button class="btn btn--ghost btn--small sequence__skip" id="seqSkip" type="button">Skip ›</button>
-    </div>
-  </div>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="site-footer" inert>
-    <p class="site-footer__date">♡ <time datetime="2026-10-25">October 25, 2026</time> ♡</p>
-    <p>Made with love, by <span data-bind="myName">Your Name</span>, for <span data-bind="mommyName">Mommy</span>.</p>
-    <p class="site-footer__hint" id="secretHint">psst… a little heart is hiding right here. Try tapping it three times.</p>
-    <button class="secret-heart" id="secretHeart" type="button" aria-describedby="secretHint" aria-label="A tiny hidden heart">♥</button>
-  </footer>
-
-  <!-- ============ HIDDEN SECRET ============ -->
-  <div class="modal" id="secret" role="dialog" aria-modal="true" aria-labelledby="secretTitle" hidden>
-    <div class="modal__backdrop" data-close></div>
-    <div class="modal__card">
-      <h2 class="modal__title" id="secretTitle"></h2>
-      <div class="modal__body letter-paper" id="secretBody"></div>
-      <div class="modal__actions">
-        <button class="btn btn--ghost btn--small" id="secretReplay" type="button">Replay</button>
-        <button class="btn btn--primary btn--small" id="secretClose" type="button">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ LIGHTBOX ============ -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
-    <div class="modal__backdrop" data-close></div>
-    <div class="lightbox__frame">
-      <button class="lightbox__btn lightbox__close" id="lbClose" type="button" aria-label="Close photo viewer">×</button>
-      <button class="lightbox__btn lightbox__prev" id="lbPrev" type="button" aria-label="Previous photo">‹</button>
-      <div class="lightbox__stage" id="lbStage"></div>
-      <button class="lightbox__btn lightbox__next" id="lbNext" type="button" aria-label="Next photo">›</button>
-      <p class="lightbox__caption" id="lbCaption"></p>
-      <p class="lightbox__count" id="lbCount"></p>
-    </div>
-  </div>
-
-  <!-- ============ MUSIC PLAYER ============ -->
-  <aside class="player" id="player" aria-label="Music controls">
-    <button class="player__toggle" id="playerToggle" type="button" aria-expanded="false" aria-controls="playerPanel" aria-label="Open music controls">♪</button>
-    <div class="player__panel" id="playerPanel" hidden>
-      <div class="player__row">
-        <button class="btn btn--primary btn--small" id="playBtn" type="button">Play</button>
-        <button class="btn btn--ghost btn--small" id="muteBtn" type="button" aria-pressed="false">Mute</button>
-      </div>
-      <p class="player__status" id="musicStatus" role="status">Music is off</p>
-      <label class="player__vol">Volume
-        <input type="range" id="volume" min="0" max="100" value="60">
-      </label>
-      <button class="btn btn--ghost btn--small" id="ambientBtn" type="button" aria-pressed="false">Ambient mode: off</button>
-    </div>
-  </aside>
-
-  <audio id="audio" preload="none" loop></audio>
-
-  <button class="to-top" id="toTop" type="button" aria-label="Back to top">↑</button>
-
-  <script src="script.js"></script>
 </body>
 </html>
